@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block main %}
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Prediction Results</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5>Prediction Input:</h5>
+                <div>Cough: <span id="sl"></span></div>
+                <div>Fever: <span id="sw"></span></div>
+                <div>Sore_Throat: <span id="pl"></span></div>
+                <div>Breathing: <span id="pw"></span></div>
+                <h5 class="pt-3">Prediction Classification:</h5>
+                <div id="prediction"></div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4">
+            <h1>Corona Prediction</h1>
+            <form action="" id="post-form">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="cough">Cough</label>
+                    <select class="form-control" type="text" name="cough" id="cough" required>
+                      <option value="No">No</option>
+                      <option value="Mild">Mild</option>
+                      <option value="Moderate">Moderate</option>
+                      <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fever">Fever</label>
+                    <select class="form-control" type="text" name="fever" id="fever" required>
+                      <option value="No">No</option>
+                      <option value="Mild">Mild</option>
+                      <option value="Moderate">Moderate</option>
+                      <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sore_throat">Sore Throat</label>
+                    <select class="form-control" type="text" name="sore_throat" id="sore_throat" required>
+                      <option value="No">No</option>
+                      <option value="Mild">Mild</option>
+                      <option value="Moderate">Moderate</option>
+                      <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="breathing">Breathing</label>
+                    <select class="form-control" type="text" name="breathing" id="breathing" required>
+                      <option value="No">No</option>
+                      <option value="Mild">Mild</option>
+                      <option value="Moderate">Moderate</option>
+                      <option value="High">High</option>
+                    </select>
+                </div>
+                <button type="submit" value="Submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).on('submit', '#post-form',function(e){
+        e.preventDefault();
+        $.ajax({
+            type:'POST',
+            url:'{% url "predict:submit_prediction" %}',
+            data:{
+                cough:$('#cough').val(),
+                fever:$('#fever').val(),
+                sore_throat:$('#sore_throat').val(),
+                breathing:$('#breathing').val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+                action: 'post'
+            },
+            success:function(json) {
+                document.forms["post-form"].reset();
+                document.getElementById("prediction").innerHTML = json['result']
+                document.getElementById("sl").innerHTML = json['cough']
+                document.getElementById("sw").innerHTML = json['fever']
+                document.getElementById("pl").innerHTML = json['sore_throat']
+                document.getElementById("pw").innerHTML = json['breathing']
+                document.getElementById("pw").innerHTML = json['breathing']
+            },
+            error : function(xhr,errmsg,err) {
+
+            }
+        });
+    })
+</script>
+
+{% endblock %}

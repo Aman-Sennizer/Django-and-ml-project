@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>COVID-19</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+      <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link rel="stylesheet" href="{% static 'css/styling.css' %}">
+      <style>
+          body
+          {
+              background:url({% static 'images/corona_1.jpg' %})50%50%;
+              background-size: cover;
+          }
+      </style>
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <div class="site-wrap">
+
+      <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+      <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+          <div class="site-logo mr-auto w-25"><a href="/">Covid-19 Prediction</a></div>
+
+          <div class="mx-auto text-center">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#courses-section" class="nav-link">About</a></li>
+                <li><a href="/Account/login" class="nav-link">Login</a></li>
+                <li><a href="/Account/register" class="nav-link">Register</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="ml-auto w-25">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+              <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+                <li class="cta"><a href="#contact-section" class="nav-link"><span>Contact Us</span></a></li>
+              </ul>
+            </nav>
+            <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+          </div>
+        </div>
+      </div>
+
+    </header><br><br><br>
+      <!--
+      <div class="intro-section single-cover" id="home-section">
+        <div class="slide-1 " style="background-image: url("{% static 'images/corona_3.png' %}"; data-stellar-background-ratio="0.5"></div>
+      </div>
+      -->
+
+
+
+      <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mb-5">
+              <div class="mb-5">
+                  <h2 class="text-black" style="font-size: 50px;position: relative;text-align: center;left: 200px !important;">Corona-Virus Description</h2>
+                  <div id="paragaphs"></div>
+                  <div class="symptoms">
+                      <img src="{% static 'images/corona_3.png' %}" width=28% height=20% style="position: relative;left: 150px; ">
+                      <q style="position: relative; left: 350px ;font-size: 40px ;font-family: 'Helvetica Neue, Helvetica, Arial, sans-serif';">
+                          <i>
+                              Stay Home, Stay Safe
+                          </i>
+                      </q>
+                      <br><br>
+                      <p style="position: relative;left: 200px;text-align: justify">
+                          Coronavirus disease 2019 (COVID-19) is an infectious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).  It was first identified in December 2019 in Wuhan, Hubei, China, and has resulted in an ongoing pandemic.<br><br>
+                          Coronaviruses are a family of viruses that can cause illnesses such as the common cold, severe acute respiratory syndrome (SARS) and Middle East respiratory syndrome (MERS). In 2019, a new coronavirus was identified as the cause of a disease outbreak that originated in China.<br><br>
+                          The virus is now known as the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The disease it causes is called coronavirus disease 2019 (COVID-19). In March 2020, the World Health Organization (WHO) declared the COVID-19 outbreak a pandemic.<br><br>
+                          Public health groups, including the U.S. Centers for Disease Control and Prevention (CDC) and WHO, are monitoring the pandemic and posting updates on their websites. These groups have also issued recommendations for preventing and treating the illness.
+                      </p>
+                  </div>
+                  <div id="banner">
+                      <div class="inline-block" >
+                          <img src="{% static 'images/prevention_1.jpg' %}" width="auto" style="position: relative;left: 230px;top:30px;">
+                      </div>
+                  </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-section bg-light">
+        <div class="site-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mb-5">
+              <div class="mb-5">
+                    <div class="comment-form-wrap pt-5">
+                        <h3 class="mb-5" style="color:black; font-weight: 900;position: relative;left: 50px ;top:20px;">Leave a comment</h3>
+                        <form action="#" class="p-5 bg-light">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                  <label for="email">Email *</label>
+                                  <input type="email" class="form-control" id="email">
+                            </div>
+                            <div class="form-group">
+                                  <label for="message">Message</label>
+                                  <textarea name="" id="message" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Post Comment" class="btn btn-primary">
+                            </div>
+                        </form>
+                    </div>
+              </div></div>
+          </div>
+        </div>
+        </div>
+
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Covid-19 Prediction</h3>
+            <p>The main goal of this website is to make predictions of being positive.</p>
+          </div>
+
+          <div class="col-md-3 ml-auto">
+            <h3>Links</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="/Account/login">Login</a></li>
+              <li><a href="/Account/register">Register</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4">
+            <h3>Subscribe our website</h3>
+            <p>Subscribe details information?</p>
+            <form action="#" class="footer-subscribe">
+              <div class="d-flex mb-5">
+                <input type="text" class="form-control rounded-0" placeholder="Email">
+                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
+              </div>
+            </form>
+          </div>
+
+        </div>
+          <body>
+          <h1>Our Team</h1>
+          <br>
+          <h4>Arpit Bansal -> Databse Management</h4>
+                           <img src="{% static 'team/arpit.JPEG' %}">
+          <h4>Aman Agrawal -> Databse Management</h4>
+                           <img src="{% static 'team/aman.jpeg' %}">
+          <h4>Vicky Sharma -> Front End Devloper</h4>
+                           <img src="{% static 'team/vicky.JPEG' %}">
+          <h4>Shilpashree -> Front End Devloper</h4>
+                           <img src="{% static 'team/shilpa.jpg' %}">
+          </body>
+
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+            <p>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved. 
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      </p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </footer>
+
+  
+    
+  </div> <!-- .site-wrap -->
+
+
+<!--  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/jquery-ui.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'js/jquery.sticky.js' %}"></script>
+
+  
+  <script src="{% static 'js/main.js' %}"></script>
+  -->
+
+  </body>
+</html>

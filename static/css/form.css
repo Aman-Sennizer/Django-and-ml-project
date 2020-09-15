@@ -1,0 +1,59 @@
+
+input.submit {
+  background-color: forestgreen;
+  border: none;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 150px;
+}
+input.submit:hover {
+  background-color: green;
+}
+
+
+
+input.reset {
+  background-color: orangered;
+  border: none;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 150px;
+}
+
+input.reset:hover {
+  background-color: red;
+}
+
+
+input {
+  width: 50%;
+}
+
+label.thicker {
+  font-weight: 900;
+  font-size: 20px;
+  text-emphasis-color: white;
+  }
+
+.center {
+  position: Center;
+  margin: auto;
+  width: 400px;
+  height: 90%;
+  border: 3px solid blue;
+  box-sizing: border-box;
+  padding: 10px;
+
+}

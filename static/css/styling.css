@@ -1,0 +1,37 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#header {
+    background: black;
+    width: auto;
+    padding: 20px 10px;
+    color: white;
+}
+
+#nav {
+    background:rgb(25, 105, 105);
+    width: auto;
+}
+
+
+#nav ul {
+    list-style: none;
+}
+
+#nav ul li {
+    float: left;
+    width: 353px;
+    padding: 15px ;
+    text-align:center;
+}
+
+#nav ul li:hover {
+    background-color:  #719cd1;
+    color: wheat;
+}
+
+#nav a{
+    color: rgb(59, 59, 136);
+}
